@@ -56,7 +56,7 @@ class Altera():
 
             if not achou:
                 print("--- Por favor digite um cpf valido!...")
-
+                time.sleep(3)
 class Deletar():
     def deletaraluno(self):   
             print("---------- Deletar o aluno ----------")
@@ -68,16 +68,18 @@ class Deletar():
                     alunos.remove(aluno)
                     salvar_arquivo(alunos)
                     print('--- Aluno deletado com sucesso!...')
-
+                    time.sleep(3)
                 
                    
                     verificando = True
-            print('---Verificando aluno...')
-            time.sleep(3)
+
+
+            print('--- Carregando!...')
+            time.sleep(2)
 
             if not verificando:      
-                print("Nenhum aluno encontrado no nosso banco de dados")
-
+                print("-- Nenhum aluno encontrado no nosso banco de dados!...")
+                time.sleep(3)
                     
 
             input("Digite enter para continuar")
@@ -94,22 +96,30 @@ class Selecionar():
             for aluno in alunos:
                 if matricula == aluno['Matricula']:
                     print(aluno)
+                    time.sleep(3)
                     salvar_arquivo(alunos)
                     print("--- Continuando com o cadastro!...")
-                    time.sleep(5)
-                elif matricula!= aluno['Matricula']:
-                    print("--- Nenhum aluno foi encontrado!")
-                    print("Carregando...")
-                time.sleep(3)
 
-class Selecionartodos():
-    def selecionartodos(self):
-            print("---------- Todos os alunos ----------")
-            arq = open(nome_do_arquivo)
-            linhas = arq.readlines()
-            for linha in linhas:
-                print(linha)
-                time.sleep(2)
+                else:
+                    print("--- Carrgando...!")
+                    print("--- Nunhum aluno foi encontrado...!")
+                    time.sleep(2)
+
+
+
+def selecionartodos():     
+        print("---------- Todos os alunos ----------")
+        arq = open(nome_do_arquivo)
+        linhas = arq.read()
+        linhas = json.loads(linhas)
+        for linha in linhas:
+            print(linha["Nome"])
+            print(linha["CPF"])
+            print(linha["Matricula"])
+            print(linha["Endereço"])
+            print(linha["Telefone"])
+
+            time.sleep(2)
 
 def menu():
     print('-=--=--=--=--=- Sistema de cadastro de alunos -=--=--=--=--=-')

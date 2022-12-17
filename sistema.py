@@ -3,7 +3,6 @@ a = Cadastra
 b = Altera
 c = Deletar
 d = Selecionar
-e = Selecionartodos
 while True:
     opção = menu()
     if opção ==1:
@@ -15,8 +14,8 @@ while True:
     elif  opção == 4:
         d.selecionarmatricula(self=Selecionar)
     elif opção == 5:
-        e.selecionartodos(self=Selecionartodos)
-        os.system('clear')
+        selecionartodos()
+        os.system('cls')
     elif opção == 6:
         print("Obrigado por usar nosso sistema... ")
         break
