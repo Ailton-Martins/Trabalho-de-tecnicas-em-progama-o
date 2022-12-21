@@ -1,61 +1,56 @@
 import os
-from Alunos import Alunos
+from aluno import Aluno
 
-
-def cadastrarAluno() -> Alunos:
+def cadastraraluno():
     limparTela()
     print("-------- Cadastro de Aluno --------")
-    aluno = Alunos()
-    aluno.setNome(input('Digite o nome do aluno: '))
-    aluno.setCPF(float(input('Digite o cpf do aluno: ')))
-    aluno.setMatricula(int(input('Digite a matricula do aluno: ')))
-    aluno.setEndereço(str(input('Digite o endereço do aluno: ')))
-    aluno.setTelefone(str(input('Digite o Telefone do aluno: ')))
+    aluno = Aluno()
+    aluno.setNome(input('Nome: '))
+    aluno.setCpf(input('CPF: '))
+    aluno.setMatricula(input('Numero da Matricula: '))
 
     return aluno
 
 
-def alteraraluno() -> Alunos:
+def editaraluno():
     limparTela()
-    print("-------- Alteração do aluno --------")
-    aluno = Alunos()
-    aluno.setNome(input('Digite o nome do aluno: '))
-    aluno.setCPF(float(input('Digite o cpf do aluno: ')))
-    aluno.setMatricula(int(input('Digite a matricula do aluno: ')))
-    aluno.setEndereço(str(input('Digite o endereço do aluno: ')))
-    aluno.setTelefone(str(input('Digite o Telefone do aluno: ')))
+    print("-------- Edição de Aluno --------")
+    aluno = Aluno()
+    aluno.setId(int(input("Td: ")))
+    aluno.setNome(input('Nome: '))
+    aluno.setCpf(input('CPF: '))
+    aluno.setMatricula(input('Numero da Matricula: '))
 
     return aluno
 
 
 def excluiraluno():
-    print("-------- Exclusão do aluno --------")
+    print("-------- Exclusão de Aluno --------")
     limparTela()
-    id = int(input('Matricla do aluno que deseja deletar: '))
+    id = int(input('Id: '))
     return id
 
 
 def selecionaraluno():
     limparTela()
-    print("-------- Seleção do Aluno --------")
-    id = int(input('Digite o CPF do aluno que deseja selecionar: '))
+    print("-------- Seleção de Aluno --------")
+    id = int(input('Id: '))
     return id
 
 
-def exibiraluno(aluno: Alunos):
-    print("-------- Aluno --------")
-    print(f"Nome: {aluno.getNome()}")
-    print(f"CPF: {aluno.getCPF()}")
-    print(f"Matricula: {aluno.getMatricula()}")
-    print(f"Endereço: {aluno.getEndereço()}")
-    print(f"Telefone: {aluno.getTelefone()}")
+def exibiraluno(aluno: Aluno):
+    print("--------Aluno --------")
+    print(f"Id: {aluno.getId()}")
+    print(f"Nome: {aluno.getNome['nome']}")
+    print(f"CPF: {aluno.getCpf['cpf']}")
+    print(f"Matricula: {aluno.getMatricula['Matricula']}")
 
 
-def exibiralunos(aluno):
+def exibiralunos(alunos):
     limparTela()
-    print("---------------- Alunos ----------------")
-    for aluno in aluno:
-        exibiraluno(aluno)
+    print("----------------Aluno ----------------")
+    for aluno in alunos:
+        exibiralunos(alunos)
     travarTela()
 
 

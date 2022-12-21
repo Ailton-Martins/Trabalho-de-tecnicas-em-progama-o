@@ -1,11 +1,10 @@
 import json
 import os.path
-
-
-class JsonStorage:
+class jsoStorange:
     __nome_arquivo = 'dados.json'
 
-    def lerJson(self) -> list[dict]:
+
+    def lerJson(self):
         if not os.path.isfile(self.__nome_arquivo):
             self.criarArquivo()
 
@@ -20,12 +19,14 @@ class JsonStorage:
 
         return data
 
-    def gravarJson(self, dados: list[dict]) -> None:
+
+    def gravarJson(self,dados):
         arq = open(self.__nome_arquivo, 'w+', encoding='utf-8')
         data = json.dumps(dados, indent=4)
         arq.write(data)
         arq.close()
 
-    def criarArquivo(self) -> None:
+
+    def criarArquivo(self):
         arq = open(self.__nome_arquivo, 'w+', encoding='utf-8')
         arq.close()
